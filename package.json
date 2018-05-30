@@ -1,0 +1,24 @@
+{
+  "name": "hapiauth",
+  "version": "1.0.0",
+  "description": "Hapi authorizaton testing",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "hapi",
+    "jwt",
+    "authorization",
+    "token",
+    "server"
+  ],
+  "author": "mario uhrin",
+  "license": "MIT",
+  "dependencies": {
+    "boom": "^7.2.0",
+    "hapi": "^17.5.1",
+    "hapi-auth-jwt2": "^8.1.0",
+    "joi": "^13.3.0"
+  }
+}
