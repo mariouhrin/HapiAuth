@@ -5,17 +5,17 @@
 npm start 
 ```
 
-### then make a GET request to see response from the Hapi server
+### make a GET request to see the response from Hapi server
 ```
-http://localhost:3000
-or
-http://localhost:3000/your-params
+<http://localhost:3000>
+  or
+<http://localhost:3000/your-params>
 ```
 
-### to check GET request you can use:
+### for GET requests you can use clients like:
 ```
 postman
-https://www.getpostman.com/apps
+<https://www.getpostman.com/apps>
 ```
 
 ```
