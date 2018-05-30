@@ -13,7 +13,8 @@ server.route({
   handler: (request, h) => {
     return {
       firstName: "mario",
-      lastNmae: "uhrin"
+      lastNmae: "uhrin",
+      status: "bitcoin billionare"
     };
   }
 });

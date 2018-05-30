@@ -4,7 +4,7 @@
   "description": "Hapi authorizaton testing",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "keywords": [
     "hapi",
@@ -20,5 +20,8 @@
     "hapi": "^17.5.1",
     "hapi-auth-jwt2": "^8.1.0",
     "joi": "^13.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
   }
 }
