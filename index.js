@@ -6,6 +6,13 @@ const { allRoutes } = require("./src/routes");
 
 const server = Hapi.server({
   port: 3000,
+  routes: {
+    validate: {
+      failAction: async (request, h, err) => {
+        throw err;
+      }
+    }
+  },
   host: "localhost"
 });
 
