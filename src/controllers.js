@@ -23,10 +23,12 @@ async function getDataWithParam(request, h) {
 
 async function sendData(request, h) {
   const data = request.payload;
-  const fields = Object.keys(data);
+  const fields = JSON.stringify(Object.keys(data));
+
   if (!data) {
     return h.response("Data payload is empty").code(404);
   }
+
   return h
     .response(
       `
