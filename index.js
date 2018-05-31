@@ -2,40 +2,30 @@
 
 const Hapi = require("hapi");
 
+const { allRoutes } = require("./src/routes");
+
 const server = Hapi.server({
   port: 3000,
   host: "localhost"
 });
 
-server.route({
-  method: "GET",
-  path: "/",
-  handler: (request, h) => {
-    return {
-      firstName: "mario",
-      lastNmae: "uhrin",
-      status: "bitcoin billionare"
-    };
-  }
-});
+async function start() {
+  // add all routes definition into Hapi serve instance
+  server.route(allRoutes);
 
-server.route({
-  method: "GET",
-  path: "/{name}",
-  handler: (request, h) => {
-    const param = request.params.name;
-    return `Hello, ${param} !`;
-  }
-});
-
-const init = async () => {
+  // Start server
   await server.start();
-  console.log(`Server running at: ${server.info.uri}`);
-};
+  return server;
+}
 
+// catch unhandled errors
 process.on("unhandledRejection", err => {
   console.log(err);
   process.exit(1);
 });
 
-init();
+start()
+  .then(server => {
+    console.log(`Server running at: ${server.info.uri}`);
+  })
+  .catch(e => console.log(e.message));
